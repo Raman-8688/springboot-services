@@ -13,13 +13,9 @@ public class AIController {
     @Autowired
     private AIService aiService;
 
-//    @GetMapping("/ask")
-//    public String askAI(@RequestParam String question) {
-//        return aiService.getAIResponse(question);
-//    }
     @PostMapping("/ask")
     public AIResponse askAI(@RequestBody AIRequest request) {
         String answer = aiService.getAIResponse(request.getQuestion());
-            return new AIResponse(answer);
+        return new AIResponse(answer);
     }
 }

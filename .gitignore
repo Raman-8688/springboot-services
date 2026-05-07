@@ -6,9 +6,19 @@ ai-frontend/.angular/
 # Spring Boot
 aiapi/target/
 
+# Maven
+.mvn/
+mvnw
+mvnw.cmd
+
 # IDE
 .idea/
 .vscode/
 
 # Secret files
 application-secret.properties
+aiapi/src/main/resources/application-secret.properties
+
+# OS
+.DS_Store
+Thumbs.db
