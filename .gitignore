@@ -1,0 +1,14 @@
+# Angular
+ai-frontend/node_modules/
+ai-frontend/dist/
+ai-frontend/.angular/
+
+# Spring Boot
+aiapi/target/
+
+# IDE
+.idea/
+.vscode/
+
+# Secret files
+application-secret.properties
