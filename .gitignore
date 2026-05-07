@@ -1,0 +1,15 @@
+# IDE
+.vscode
+.idea
+*.iml
+
+# Logs
+logs
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Zip
+*.zip
