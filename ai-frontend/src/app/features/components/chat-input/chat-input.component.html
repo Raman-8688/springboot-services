@@ -1,0 +1,33 @@
+<div class="chat-input-area">
+  <div class="input-container">
+    <textarea
+      #messageInput
+      [(ngModel)]="question"
+      (input)="autoResize(messageInput)"
+      (keydown.enter)="handleEnter($event, messageInput)"
+      placeholder="Ask anything"
+      rows="1"
+      [disabled]="isLoading"
+    ></textarea>
+
+    <div class="input-actions">
+      <button class="plus-btn" type="button">+</button>
+
+      <div class="right-actions">
+        <button class="mode-btn" type="button">Instant⌄</button>
+        <button class="mic-btn" type="button">🎙</button>
+
+        <button
+          class="send-button"
+          type="button"
+          (click)="sendMessage(messageInput)"
+          [disabled]="!question.trim() || isLoading"
+        >
+          ➤
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <p class="footer-note">Mini AI can make mistakes. Check important info.</p>
+</div>

@@ -1,0 +1,42 @@
+<div
+  class="message-wrapper"
+  [class.user-message]="message.isUser"
+  [class.bot-message]="!message.isUser"
+>
+  <div class="message-avatar">
+    <div *ngIf="message.isUser" class="user-avatar">U</div>
+    <div *ngIf="!message.isUser" class="bot-avatar">AI</div>
+  </div>
+
+  <div class="message-bubble" [class.typing]="message.isTyping">
+    <div *ngIf="message.isTyping" class="typing-indicator">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <ng-container *ngIf="!message.isTyping">
+      <div *ngIf="message.isUser" class="user-text">
+        {{ message.text }}
+      </div>
+
+      <app-markdown-renderer
+        *ngIf="!message.isUser"
+        [content]="message.text"
+      ></app-markdown-renderer>
+    </ng-container>
+
+    <div class="message-time">{{ formatTime(message.timestamp) }}</div>
+  </div>
+</div>
+
+
+<!-- <ng-container *ngIf="!message.isTyping">
+  <div *ngIf="message.isUser" class="user-text">
+    {{ message.text }}
+  </div>
+
+  <div *ngIf="!message.isUser" class="bot-text">
+    {{ message.text }}
+  </div>
+</ng-container> -->

@@ -1,10 +1,23 @@
-import { provideHttpClient } from '@angular/common/http';
-import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+// app.config.ts
+import { ApplicationConfig } from '@angular/core';
+import { provideRouter } from '@angular/router';
+import { authInterceptor } from './core/interceptors/auth.interceptor';
+import {
+  provideHttpClient,
+  withInterceptors,
+} from '@angular/common/http';
+
+import { routes } from './app.routes';
+import { provideMarkdown } from 'ngx-markdown';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient(),
-    importProvidersFrom(FormsModule)
-  ]
+    provideRouter(routes),
+     provideHttpClient(
+      withInterceptors([authInterceptor])
+    ),
+   provideMarkdown(),// Add this
+  ],
 };
+
+

@@ -1,0 +1,49 @@
+<div class="auth-page">
+  <div class="auth-card">
+    <div class="brand">
+      <div class="logo">AI</div>
+      <h1>Verify Email</h1>
+      <p>Enter the OTP sent to your email</p>
+    </div>
+
+    <form (ngSubmit)="verifyEmail()">
+      <label>Email</label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="Enter your email"
+      />
+
+      <label>OTP</label>
+      <input
+        type="text"
+        [(ngModel)]="otp"
+        name="otp"
+        maxlength="6"
+        placeholder="Enter 6 digit OTP"
+      />
+
+      <button type="submit" [disabled]="isLoading">
+        {{ isLoading ? 'Verifying...' : 'Verify Email' }}
+      </button>
+    </form>
+
+    <button
+      class="resend-btn"
+      type="button"
+      (click)="resendOtp()"
+      [disabled]="isResending"
+    >
+      {{ isResending ? 'Sending OTP...' : 'Resend OTP' }}
+    </button>
+
+    <p class="success" *ngIf="message">{{ message }}</p>
+    <p class="error" *ngIf="errorMessage">{{ errorMessage }}</p>
+
+    <p class="switch">
+      Already verified?
+      <a routerLink="/login">Login</a>
+    </p>
+  </div>
+</div>

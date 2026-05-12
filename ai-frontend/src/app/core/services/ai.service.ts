@@ -6,10 +6,9 @@ import { AIRequest } from '../models/ai-request.model';
 import { AIResponse } from '../models/ai-response.model';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class AiService {
-
   private baseUrl = 'http://localhost:8080/api/ai';
 
   constructor(private http: HttpClient) {}

@@ -1,0 +1,102 @@
+.markdown-body {
+  line-height: 1.7;
+}
+
+.markdown-body h1 {
+  font-size: 24px;
+  margin: 16px 0 10px;
+}
+
+.markdown-body h2 {
+  font-size: 20px;
+  margin: 14px 0 8px;
+}
+
+.markdown-body h3 {
+  font-size: 18px;
+  margin: 12px 0 6px;
+}
+
+.markdown-body p {
+  margin: 8px 0;
+}
+
+::ng-deep .code-wrapper {
+  margin: 14px 0;
+  border-radius: 10px;
+  overflow: visible;
+  background: #1e1e1e;
+}
+
+::ng-deep .code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: #2d2d2d;
+  color: white;
+  border-radius: 10px 10px 0 0;
+}
+
+::ng-deep .copy-btn {
+  position: relative;
+  border: none;
+  background: transparent;
+  color: #d1d5db;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+::ng-deep pre {
+  margin: 0;
+  padding: 14px;
+  overflow-x: auto;
+  background: #1e1e1e;
+  color: #d4d4d4;
+}
+
+::ng-deep code {
+  font-family: Consolas, Monaco, monospace;
+}
+
+::ng-deep .copy-btn:hover {
+  color: white;
+}
+
+::ng-deep .copy-btn {
+  position: relative;
+}
+
+::ng-deep .copy-btn::after {
+  content: "Copy";
+  position: absolute;
+  right: 0;
+  top: 130%;
+  background: #000;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+::ng-deep .copy-btn:hover::after {
+  opacity: 1;
+}
+
+::ng-deep pre {
+  margin: 0;
+  padding: 14px;
+  overflow-x: auto;
+  background: #1e1e1e;
+  color: #d4d4d4;
+  border-radius: 0 0 10px 10px;
+}
+
+::ng-deep .copy-btn.copied::after {
+  content: "Copied!";
+}
+
+
+/* background: #10a37f; */
